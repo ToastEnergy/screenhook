@@ -1,5 +1,5 @@
+import selenium, requests, time, sys, json, os.path
 from selenium import webdriver
-import requests, time, sys, json, os.path
 
 if not os.path.exists("config.json"):
     WEBSITE_URL = input("enter the website to target\n")
@@ -26,7 +26,12 @@ chrome_options.add_argument('--headless')
 chrome_options.add_argument("--window-size=1920,1080")
 
 print("[DRIVER] Starting driver...")
-driver = webdriver.Chrome(options=chrome_options)
+try:
+    driver = webdriver.Chrome(options=chrome_options)
+except selenium.common.exceptions.WebDriverException:
+    print("\nchromedriver isn't installed!\nhttps://chromedriver.chromium.org/downloads\n(you can use sudo apt install chromium-chromedriver on ubuntu/debian))")
+    exit()
+
 print("[DRIVER] Getting webpage...")
 driver.get(config['WEBSITE_URL'])
 print("[DRIVER] Rendering...")

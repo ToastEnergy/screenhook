@@ -1,15 +1,10 @@
-# Screenhook: screenshot from the web for discord webhooks
-Screenhook is a script that captures an image of a web page and send it to a discord webhook.
+# screenhook
+## screenshot from the web for discord webhooks
+screenhook is a script that captures an image of a web page and send it to a discord webhook.
 
-Screenhook has a guided configuration system, after installing the necessary files with the [script](https://github.com/ToastEnergy/screenhook/blob/master/install.sh) run the [python file](https://github.com/ToastEnergy/screenhook/blob/master/screenhook.py) and follow the instructions!
-
-You can change the settings of the config that will be created at any time.
-- The website link to be captured
-- The loading time of the web page before capture (if the site is heavy)
-- The webhook link where to send the image
 ![Banner](https://github.com/ToastEnergy/screenhook/blob/master/banner.png)
 ## Getting started
-### installation and configuration
+### installation
 ```
 sudo apt update && sudo apt upgrade
 sudo apt install chromium-chromedriver
@@ -17,11 +12,28 @@ curl -fsSl https://raw.githubusercontent.com/ToastEnergy/screenhook/master/insta
 cd screenhook
 python3 screenhook.py
 ```
+### configuration
+when you run the script for the first time you will be prompted to enter some configuration.
+later you will be able to edit the configuration file (`config.json`) that has been created with the following options:
+- `WEBSITE_URL`: the website to target (include http protocol)
+
+
+- `WEBHOOK_URL`: the discord webhook url that will look something like this: `https://discordapp.com/api/webhooks/0123456789/abcdefghijklmnopqrstuvwxyz`
+
+- `WAIT_BEFORE_SCREENSHOT`: the amount of time to wait before taking the screenshot (in seconds)
+
+```json
+{
+    "WEBSITE_URL": "https://google.com",
+    "WEBHOOK_URL": "https://discordapp.com/api/webhooks/0123456789/abcdefghijklmnopqrstuvwxyz",
+    "WAIT_BEFORE_SCREENSHOT": 5
+}
+```
 ## Automatic execution
 ### crontab installation and settings
 ```
-sudo apt-get update
-sudo apt-get install cron
+sudo apt update
+sudo apt install cron
 crontab -e
 ```
 Now go to the end of the crontab file and paste `@weekly /bin/python3 /home/user/screenhook/screenhook.py`
