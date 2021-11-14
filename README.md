@@ -35,7 +35,7 @@ sudo apt update
 sudo apt install cron
 crontab -e
 ```
-now go to the end of the crontab file and paste `@weekly /bin/python3 /home/user/screenhook/screenhook.py`
+after creating the config file by running the program at least once now go to the end of the crontab file and paste `@weekly /bin/python3 /home/user/screenhook/screenhook.py`
 | Other examples                                                    | Description                         |
 | -------------------------------------------------------------- | ----------------------------------- |
 | 0 * * * * /bin/python3 /home/user/screenhook/screenhook.py | run the command every hour |
