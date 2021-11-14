@@ -2,9 +2,7 @@
 ```
 sudo apt update && sudo apt upgrade
 sudo apt install chromium-chromedriver
-git clone https://github.com/ToastEnergy/screenshot
-cd screenshot
-python3 -m pip install -r requirements.txt
+curl -fsSl https://raw.githubusercontent.com/ToastEnergy/screenshot/master/screenhook.py | sh
 ```
 ### run
 ```
