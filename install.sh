@@ -1,2 +1,4 @@
-python3 -m pip install selenium requests
-curl --output screenhook.py https://raw.githubusercontent.com/ToastEnergy/screenhook/master/screenhook.py
+git clone https://github.com/ToastEnergy/screenhook
+cd screenhook
+python3 -m pip install -r requirements.txt
+echo "installed, use python3 screenhook.py, make sure chromedriver is installed"
