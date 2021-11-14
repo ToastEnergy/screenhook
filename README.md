@@ -4,8 +4,8 @@ screenhook is a script that captures an image of a web page and send it to a dis
 
 In the configuration file you can in fact configure the following things:
 - The website link to be captured
-- The webhook link
 - The loading time of the web page before capture
+- The webhook link
 
 ![Banner](https://github.com/ToastEnergy/screenhook/blob/master/banner.png)
 ### installation
