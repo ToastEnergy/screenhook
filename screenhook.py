@@ -36,6 +36,6 @@ driver.quit()
 print("[DRIVER] Done!")
 
 print("[DISCORD] Sending Discord webhook...")
-r = requests.post(config['WEBHOOK_URL'], files={'file': ('dynmap.png',screenshot)})
+r = requests.post(config['WEBHOOK_URL'], files={'file': ('screenhook.png',screenshot)})
 print(f"[DISCORD] Webhook sent with statuscode {r.status_code}")
 
