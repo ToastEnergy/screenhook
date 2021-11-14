@@ -1,7 +1,6 @@
 # screenhook
 ## screenshot from the web for discord webhooks
 screenhook is a script that captures an image of a web page and send it to a discord webhook.
-
 ![Banner](https://github.com/ToastEnergy/screenhook/blob/master/banner.png)
 ## Getting started
 ### installation
@@ -29,19 +28,19 @@ later you will be able to edit the configuration file (`config.json`) that has b
     "WAIT_BEFORE_SCREENSHOT": 5
 }
 ```
-## Automatic execution
+## automatic execution
 ### crontab installation and settings
 ```
 sudo apt update
 sudo apt install cron
 crontab -e
 ```
-Now go to the end of the crontab file and paste `@weekly /bin/python3 /home/user/screenhook/screenhook.py`
+now go to the end of the crontab file and paste `@weekly /bin/python3 /home/user/screenhook/screenhook.py`
 | Other examples                                                    | Description                         |
 | -------------------------------------------------------------- | ----------------------------------- |
-| 0 * * * * /bin/python3 /home/user/screenhook/screenhook.py | Run the command every hour |
-| @daily /bin/python3 /home/user/screenhook/screenhook.py | Run the command every day |
-| 00 14 * * sat /bin/python3 /home/user/screenhook/screenhook.py | Run the command every Saturday at 14:00 |
-| @reboot /bin/python3 /home/user/screenhook/screenhook.py | Run the command every reboot |
+| 0 * * * * /bin/python3 /home/user/screenhook/screenhook.py | run the command every hour |
+| @daily /bin/python3 /home/user/screenhook/screenhook.py | run the command every day |
+| 00 14 * * sat /bin/python3 /home/user/screenhook/screenhook.py | run the command every Saturday at 14:00 |
+| @reboot /bin/python3 /home/user/screenhook/screenhook.py | run the command every reboot |
 
 You can find more examples on [crontab guru](https://crontab.guru/)

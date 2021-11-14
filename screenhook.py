@@ -1,7 +1,9 @@
 import selenium, requests, time, sys, json, os.path
 from selenium import webdriver
 
-if not os.path.exists("config.json"):
+FILE_PATH = os.path.dirname(os.path.realpath(__file__)) + "/config.json"
+
+if not os.path.exists(FILE_PATH):
     WEBSITE_URL = input("enter the website to target\n")
     WEBHOOK_URL = input("enter the discord webhook url\n")
 
@@ -15,10 +17,10 @@ if not os.path.exists("config.json"):
             print("specify a number")
             end = False
 
-    with open("config.json", "w") as f:
+    with open(FILE_PATH, "w") as f:
         json.dump({"WEBSITE_URL": WEBSITE_URL, "WEBHOOK_URL": WEBHOOK_URL, "WAIT_BEFORE_SCREENSHOT": WAIT_BEFORE_SCREENSHOT}, f, indent=4)
 
-with open("config.json", "r") as f:
+with open(FILE_PATH, "r") as f:
     config = json.load(f)
 
 chrome_options = webdriver.ChromeOptions()
