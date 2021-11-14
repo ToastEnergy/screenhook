@@ -2,7 +2,7 @@
 ```
 sudo apt update && sudo apt upgrade
 sudo apt install chromium-chromedriver
-curl -fsSl https://raw.githubusercontent.com/ToastEnergy/screenshot/master/screenhook.py | sh
+curl -fsSl https://raw.githubusercontent.com/ToastEnergy/screenhook/master/screenhook.py | sh
 ```
 ### run
 ```
