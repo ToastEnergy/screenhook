@@ -5,8 +5,18 @@ if not os.path.exists("config.json"):
     WEBSITE_URL = input("enter the website to target\n")
     WEBHOOK_URL = input("enter the discord webhook url\n")
 
+    end = False
+    while not end:
+        WAIT_BEFORE_SCREENSHOT = input("enter the time to wait before taking a screenshot\n")
+        try:
+            WAIT_BEFORE_SCREENSHOT = int(WAIT_BEFORE_SCREENSHOT)
+            end = True
+        except:
+            print("specify a number")
+            end = False
+
     with open("config.json", "w") as f:
-        json.dump({"WEBSITE_URL": WEBSITE_URL, "WEBHOOK_URL": WEBHOOK_URL}, f, indent=4)
+        json.dump({"WEBSITE_URL": WEBSITE_URL, "WEBHOOK_URL": WEBHOOK_URL, "WAIT_BEFORE_SCREENSHOT": WAIT_BEFORE_SCREENSHOT}, f, indent=4)
 
 with open("config.json", "r") as f:
     config = json.load(f)
@@ -20,7 +30,7 @@ driver = webdriver.Chrome(options=chrome_options)
 print("[DRIVER] Getting webpage...")
 driver.get(config['WEBSITE_URL'])
 print("[DRIVER] Rendering...")
-time.sleep(1)
+time.sleep(config['WAIT_BEFORE_SCREENSHOT'])
 screenshot = driver.get_screenshot_as_png()
 driver.quit()
 print("[DRIVER] Done!")

@@ -1,12 +1,11 @@
-# screenhook: screenshot from the web for webhooks
+# screenhook: screenshot from the web for discord webhooks
 
-screenhook is a script that captures an image of a web page by sending it through the webhook system
+screenhook is a script that captures an image of a web page and send it to a discord webhook
 
 In the configuration file you can in fact configure the following things:
 - The website link to be captured
 - The webhook link
 - The loading time of the web page before capture
-- How often to send the capture image
 
 ### installation
 ```
