@@ -7,6 +7,7 @@ In the configuration file you can in fact configure the following things:
 - The webhook link
 - The loading time of the web page before capture
 
+![Banner](https://github.com/ToastEnergy/screenhook/blob/master/banner.png)
 ### installation
 ```
 sudo apt update && sudo apt upgrade
