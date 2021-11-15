@@ -21,6 +21,8 @@ later you will be able to edit the configuration file (`config.json`) that has b
 
 - `WAIT_BEFORE_SCREENSHOT`: the amount of time to wait before taking the screenshot (in seconds)
 
+- `WORK_WITH_ERRORS`: if set to `false` the script won't take the screenshot if the website returns an error (default: `true`)
+
 ```json
 {
     "WEBSITE_URL": "https://google.com",

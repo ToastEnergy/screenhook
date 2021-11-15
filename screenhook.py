@@ -18,10 +18,15 @@ if not os.path.exists(FILE_PATH):
             end = False
 
     with open(FILE_PATH, "w") as f:
-        json.dump({"WEBSITE_URL": WEBSITE_URL, "WEBHOOK_URL": WEBHOOK_URL, "WAIT_BEFORE_SCREENSHOT": WAIT_BEFORE_SCREENSHOT}, f, indent=4)
+        json.dump({"WEBSITE_URL": WEBSITE_URL, "WEBHOOK_URL": WEBHOOK_URL, "WAIT_BEFORE_SCREENSHOT": WAIT_BEFORE_SCREENSHOT, "WORK_WITH_ERRORS": True}, f, indent=4)
 
 with open(FILE_PATH, "r") as f:
     config = json.load(f)
+
+if not config["WORK_WITH_ERRORS"]:
+    if requests.get(config["WEBSITE_URL"]).status_code != 200:
+        print("[SCREENHOOK] Website isn't working, if you still want the screenshot set \"WORK_WITH_ERRORS\"=true")
+        exit()
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
